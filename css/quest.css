@@ -134,3 +134,18 @@ address, strong{font-style:normal; font-weight:normal;}
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+ul {
+	list-style: none;
+}
+
+li::marker {
+	content: "★";
+	color: var(--yellow);
+}
+
+li {
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	font-weight: 300;
+	padding-left: 1em;
+}

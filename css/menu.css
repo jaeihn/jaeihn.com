@@ -54,3 +54,19 @@
 	margin: 0px 120px;
 }
 
+.img-container {
+	flex-direction:row;
+	display: flex;
+	text-align: center;
+	width: 800px;
+}
+
+.img-item {
+	width: 33%;
+	height: 100%;
+}
+
+img {
+	width: 250px;
+	height: 250px;
+}

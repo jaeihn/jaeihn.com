@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="eng">
-<script src="https://d3js.org/d3.v7.min.js"></script>
-	<head>
+<script src="./js/tabs.js"></script>
+<head>
 	<meta charset="utf-8">
-	<title>PROjaeCTS</title>
-	<link href="css/quest.css" rel="stylesheet" type="text/css">
+	<title>Quest Log</title>
+	<link href="./css/quest.css" rel="stylesheet" type="text/css" />
+	<link href="./css/menu.css" rel="stylesheet" type="text/css" />
 </head>
 	
 <body>
 	<div class="header">
 		<a class="logo" href="index.html">JAEIHN</a>
 		<div class="header-right">
-			<a class="active" href="#quests.html">QUEST LOG</a>
-			<a href="projects.html">PROJECTS</a>
+			<a class="active" href="quests.html">QUEST LOG</a>
+			<a href="projects/showcase.html">PROJECTS</a>
+			<a href="reviews.html">REVIEWS</a>
 		</div>
 	</div> 	
-
 	<div class="content">
-		<script>
-			d3.select("body").append("p").text("Hello World!");
-		</script>
-		<h2 font-size="30px">Quest Log</h2>
-		<p>내가 하고 싶은 모든 일들의 목록<br/>Last updated: 2023-05-08</p>
-		<hr/>
+		<h2 font-size="30px" style="text-align:center;padding:0px;">Quest Log</h2>
+		<p>All the things that I want to do.<br/>내가 하고 싶은 모든 일들의 목록.<br/><i>Last updated: 2023-05-08</i></p>
+	</div>
+	<div class="tab">
+	  	<button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Ongoing')">Ongoing</button>
+	  	<button class="tablinks" onclick="openTab(event, 'Completed')">Completed</button>
+	</div>
+	<div id="Ongoing" class="tabcontent">
+		<hr />
 		<h3>되고 싶은 내가 되는 법</h3>
 		<h2>Becoming X</h2>
-		<p><span>석사 무사히 졸업하기</span> | 규칙적인 생활에 정착하기 | daily ticket/일기/기록 시스템 구축하기 | 문신하기 | 피어싱 뚫기 | 양손잡이 되기 | 몸무게 원상 복구 | 장기기증 서약하기 | CPR 자격증 | 영주권 받기 | 내 명함 뽑기 | 사진 용 미소를... 골몰하기 | 시간 관리의 대가 되기 | 태권도 배우기 | 스노보드 타는 법 배우기 | 인라인 타는 법 배우기 | 12개국어 하기 (5/12)</p>
+		<p><span>석사 무사히 졸업하기</span> | 규칙적인 생활에 정착하기 | daily ticket/일기/기록 시스템 구축하기 | 양손잡이 되기 | 몸무게 원상 복구 | CPR 자격증 | 캐나다 취업비자 받기 | 캐나다 영주권 받기 | 내 명함 뽑기 | 사진 용 미소를... 골몰하기 | 시간 관리의 대가 되기 | 태권도 배우기 | 스노보드 타는 법 배우기 | 인라인 타는 법 배우기 | 12개국어 하기 (5/12)</p>
 		<hr/>
 		<h3>다양한 플랫폼에서의 프로필</h3>
 		<h2>인터넷 페르소나</h2>
-		<p>개인 홈페이지 만들기 | Resume 업데이트 하기 | FaceBook 프로필 갱신하기 | LinkedIn 프로필 갱신하기 | GitHub 프로필 갱신하기 | Kaggle 프로필 갱신하기 | 블로그 애드포스트 등록하기 | 이메일 정리, 계정 이전하기, 필요 없는 계정 지우기 | digital file system 구축하기 | 인스타그램 시작하기 | 유튜브 채널 열기 | 연주 동영상 | 게임 동영상 | 노래 동영상 | 그림 timelapse 영상</p>
+		<p>Resume 업데이트 하기 | FaceBook 프로필 갱신하기 | LinkedIn 프로필 갱신하기 | GitHub 프로필 갱신하기 | Kaggle 프로필 갱신하기 | 블로그 애드포스트 등록하기 | 이메일 정리, 계정 이전하기, 필요 없는 계정 지우기 | digital file system 구축하기 | 인스타그램 시작하기 | 유튜브 채널 열기 | 연주 동영상 | 게임 동영상 | 노래 동영상 | 그림 timelapse 영상</p>
 		<hr/>
 		<h3>돈으로 살 수 있는 행복도 있다</h3>
 		<h2>티끌 모아 태산</h2>
-		<p>목표 금액 달성하기 | 흑자 내기 | 모든 빚 갚기 | 세금 내기 | perfectly balanced budget | 나의 공간 마련하기 | 서점 / 북카페 / 도서관 열기 | 쉐어하우스 운영하기</p>
+		<p>목표 금액 달성하기 | 흑자 내기 | 취업하기 | 세금 내기 | perfectly balanced budget | 나의 공간 마련하기 | 서점 / 북카페 / 도서관 열기 | 쉐어하우스 운영하기</p>
 		<hr/>
 		<h3>모든 것에서 상호텍스트성을 읽어내는 연습</h3>
 		<h2>최초의 의식, 관조자의 눈</h2>
@@ -57,16 +61,79 @@
 		<hr/>
 		<h3>너와 만나는 이야기</h3>
 		<h2>우리는 언젠가 만난다</h2>
-		<p>연락처 정리하기 | 인사이더's 클럽 만들기 | 창의적 활동하는 연맹 만들기 | 두번째 물물교환 하기 | 세번째 원나잇 하기 | 세번째 연애하기</p>
+		<p>연락처 정리하기 | 인사이더's 클럽 만들기 | 창의적 활동하는 연맹 만들기 | 두번째 물물교환 하기 </p>
 		<hr/>
 		<h3>온 지구를 나의 집 삼아</h3>
 		<h2 style="font-family: 'Noto Serif SC', serif; font-weight: 400;">世界那麼大， 我想去看看。</h2>
 		<p>몽레알 여행하기 | 왕복 운전으로 춘천 가서 닭갈비 먹고 오기 | 캐나다 기차횡단 | 일곱 대륙 모두 밟아보기 | 오키나와 츄라우미 수족관 가기 | 후쿠오카 여행 가서 추억 여행하기 | 영국가서 포르노스타 마티니 마시기 (과일 향이 나는 영국 칵테일) | 스페인 6개월 살기 | 일본 6개월 살기 | 헝가리 6개월 살기 | 오스트리아 6개월 살기</p>
 		<hr/>
-	<h3 style="text-align:right;"><strong>영감의 씨앗을 심어준 참고 자료들</strong></h3>
-	<p style="text-align:right">pilgramages님의 티스토리 블로그 "In Search of Lost Time"에 게재된 버킷리스트<br/>월영화님 네이버 블로그 "나는 명품이다.(지금은 과정중)"의 만권독후감<br/>금정연 &lt;서서비행&gt; 2012, p.158<br/>Anne Bogel &lt;I'd Rather Be Reading&gt; 2018</p>
+		<h3 style="text-align:right;"><strong>영감의 씨앗을 심어준 참고 자료들</strong></h3>
+		<p style="text-align:right">pilgramages님의 티스토리 블로그 "In Search of Lost Time"에 게재된 버킷리스트<br/>월영화님 네이버 블로그 "나는 명품이다.(지금은 과정중)"의 만권독후감<br/>금정연 &lt;서서비행&gt; 2012, p.158<br/>Anne Bogel &lt;I'd Rather Be Reading&gt; 2018</p>
+	</div>
+	<div id="Completed" class="tabcontent">
+		<hr/>
+		<h3>되고 싶은 내가 되는 법</h3>
+		<h2>Becoming X</h2>
+		<p>산티아고 순례길 걷기</p>
+		<p>학사 졸업하기</p>
+		<p>치아 (재)교정 마치기</p>
+		<p>문신하기</p>
+		<p>피어싱 뚫기</p>
+		<p>양손잡이 되기</p>
+		<p>장기기증 서약하기 (한국)</p>
+		<hr/>
+		<h3>다양한 플랫폼에서의 프로필</h3>
+		<h2>인터넷 페르소나</h2>
+		<p>개인 홈페이지 만들기 : Build a personal website</p>
+		<p>DJMAX RESPECT 온라인 라이브에서 퍼펙트 플레이 하기</p>
+		<p>동영상 만들어서 투고하기</p>
+		<p>리그오브레전드</p>
+		<hr/>
+		<h3>돈으로 살 수 있는 행복도 있다</h3>
+		<h2>티끌 모아 태산</h2>
+		<p>총액</p>
+		<p>알바비</p>
+		<p>언어 능력으로 돈 벌기</p>
+		<p>그림/디자인으로 돈 벌기</p>
+		<p>피아노로 돈 벌기</p>
+		<hr/>
+		<h3>모든 것에서 상호텍스트성을 읽어내는 연습</h3>
+		<h2>최초의 의식, 관조자의 눈</h2>
+		<p>독서하기</p>
+		<p>독후감 쓰기</p>
+		<hr/>
+		<h3>노력형 굇수가 될 겁니다</h3>
+		<h2>창작 면허 프로젝트</h2>
+		<p>대형 퍼즐 (1000P) 완성하기</p>
+		<p>프랑스 자수 작품 완성하기</p>
+		<hr/>
+		<h3>정보의 범람 속에 익사하지 않도록</h3>
+		<h2>펜은 칼보다 강하다</h2>
+		<hr/>
+		<h3>その全てが今 君の歌になる</h3>
+		<h2>One Man Live</h2>
+		<hr/>
+		<h3>경험의 축적, 혹은 살면서 한 번쯤 겪어보고 싶은</h3>
+		<h2>Counting Pulses</h2>
+		<p>외국어 공부로 공책 끝까지 다 쓰기</p>
+		<p>그림으로 연습장 끝까지 채우기</p>
+		<hr/>
+		<h3>너와 만나는 이야기</h3>
+		<h2>우리는 언젠가 만난다</h2>
+		<hr/>
+		<h3>온 지구를 나의 집 삼아</h3>
+		<h2 style="font-family: 'Noto Serif SC', serif; font-weight: 400;">世界那麼大， 我想去看看。</h2>
+		<p>한복 입고 경복궁 나들이 하기</p>
+		<p>경춘선 숲길 걷기</p>
+		<p>강릉 여행하기</p>
+		<p>속초 여행하기</p>
+		<hr/>
+		<h3 style="text-align:right;"><strong>영감의 씨앗을 심어준 참고 자료들</strong></h3>
 
-
-</div>
+	</div>
 </body>
+<script>
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+</script>
 </html>

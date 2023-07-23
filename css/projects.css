@@ -71,3 +71,16 @@ p {
 
 h1,h4,h5,h6 { font-size:100%; }
 address,strong{font-style:normal; font-weight:normal;}
+
+a.link {
+	color: var(--black);
+	background: rgba(240, 67, 50, 0.5);
+	text-decoration: none;
+	
+}
+a.link:hover {
+	background: var(--red);
+	color: white;
+}
+
+

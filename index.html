@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<title>about @jaeihn</title>
-	<link href="./css/quest.css" rel="stylesheet" />
 	<link href="./css/menu.css" rel="stylesheet" type="text/css" />
 	<link href="./css/about.css" rel="stylesheet" type="text/css" />
 	<!-- Load d3.js -->
@@ -11,6 +10,8 @@
 	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 	<script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+	<script src="./js/tabs.js"></script>
+	<script src="./js/media.js"></script>
 </head>
 	
 	
@@ -21,20 +22,29 @@
 		<div class="header-right">		
 			<a href="quests.html">QUEST LOG</a>	
 			<a href="projects/showcase.html">PROJECTS</a>
-			<a href="reviews.html">REVIEWS</a>		
+			<a href="https://datascience-resources.vercel.app/" target="_blank">NOTES</a>		
 		</div>
 	</div> 	
 	
 	<div class="content">
 		<h1>I am ...</h1>
 		<p>Data science and machine learning expert, based in Vancouver, BC, Canada.</p>
+		<!-- Contact Links -->
+		<p>
+		  <a href="https://blog.naver.com/z280937">
+			<img class="badge" alt="Naver Blog" src="https://img.shields.io/badge/NAVER-03C75A?style=for-the-badge&logo=NAVER&logoColor=FFFFFF" ></a>
+		  <a href="https://www.github.com/jaeihn">
+			<img class="badge" alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white"></a>
+		  <a href="mailto:jaeihn00@gmail.com">
+			<img class="badge" alt="Email" src="https://img.shields.io/badge/-Email-c14438?style=for-the-badge&logo=Gmail&logoColor=white"></a>
+		</p>
+		<br />
 		<h2 style="text-align: center; padding:0px;">Understand me through my data</h2>
 		<h4>Travel History</h4>
 		<svg id="map"></svg>
-		<script src="./js/map.js"></script>
-		
+		<script src="./js/map.js"></script>		
+		<hr />
 		<h4>Skills</h4>
-		
 		<table>
 			<tr>
 				<th>DATA ANALYTICS</th>
@@ -50,15 +60,48 @@
 			</tr>
 			<tr>
 				<th>SOFTWARE ENGINEERING</th>
-				<td>Object-oriented programming, Java, C, C++, HTML, Shell, Java Swing, JavaFX, HTML, git, GitHub, Docker</td>
+				<td>Object-oriented programming, Java, C, C++, Shell, Unix, Java Swing, JavaFX, git, GitHub, Docker</td>
+			</tr>
+			<tr>
+				<th>WEB DEVELOPMENT</th>
+				<td>HTML, CSS, JavaScript</td>
 			</tr>
 			<tr>
 				<th>OTHER SKILLS</th>
-				<td>CSS, JavaScript, LaTeX, Adobe Suite, foreign languages (English, Korean, Japanese, Mandarin Chinese), project management, written communication, oral communication</td>
+				<td>LaTeX, Adobe Suite, foreign languages (English, Korean, Japanese, Mandarin Chinese), project management, written communication, oral communication</td>
 			</tr>
 		</table>
+<!--
+		<hr />
+		<h4>Media Consumption</h4>
+		<div class="tab">
+			<button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Books')">Books</button>
+			<button class="tablinks" onclick="openTab(event, 'Movies')">Movies</button>
+			<button class="tablinks" onclick="openTab(event, 'Series')">Series</button>
+			<button class="tablinks" onclick="openTab(event, 'Animes')">Animes</button>
+			<button class="tablinks" onclick="openTab(event, 'Games')">Games</button>
+		</div>
+		<div id="Books" class="tabcontent">
+			<div id="books-read"></div>
+		</div>
+		<div id="Movies" class="tabcontent">
+
+		</div>
+		<div id="Series" class="tabcontent">
+
+		</div>
+		<div id="Animes" class="tabcontent">
+
+		</div>
+		<div id="Games" class="tabcontent">
+
+		</div>
+		<script>
+			// Get the element with id="defaultOpen" and click on it
+			document.getElementById("defaultOpen").click();
+		</script>
+--> 
 	</div>
+
 </body>
-
-
 </html>

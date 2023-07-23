@@ -80,7 +80,7 @@ hr {
 	color: var(--yellow);
 	opacity: 50%;
 	border-width: 2px;
-}t
+}
 
 h1,h4,h5,h6 { font-size:100%; }
 address, strong{font-style:normal; font-weight:normal;}
@@ -162,7 +162,21 @@ li {
 	height: 100%;
 }
 
-img {
-	width: 250px;
-	height: 250px;
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+li.todo::marker {
+	content: "•";
+	color: var(--black);
 }

@@ -4,32 +4,18 @@ var margin = {top: 0, right: 10, bottom: 0, left: 100},
     height = 400 - margin.top - margin.bottom;
 
 // The svg
-var svg = d3.select("svg")
- .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-  
-// create a tooltip
-    var tooltip = d3.select("#tooltip")
-      .style("opacity", 0)
-      .attr("class", "tooltip")
-      .style("background-color", "white")
-      .style("border", "solid")
-      .style("border-width", "1px")
-      .style("border-radius", "5px")
-      .style("padding", "5px")
-      .style("position", "absolute")
- 
-
+var svg = d3.select("#map")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+	.attr("transform",
+		  "translate(" + margin.left + "," + margin.top + ")");
       
 // Map and projection
-//var path = d3.geoPath();
 var projection = d3.geoMercator()
-  .scale(90, 60)
-  .center([0,50])
-  .translate([width / 2 - margin.left, height / 2]);
+	.scale(90, 60)
+	.center([0,50])
+	.translate([width / 2 - margin.left, height / 2]);
 
 // Data and color scale
 var data = d3.map();
@@ -38,8 +24,8 @@ var labels = ["Resided", "Travelled", "Unexplored"]
 var range = ["#F04332","#FBAD18","#dddddd"]
 
 var colorScale = d3.scaleOrdinal()
-  .domain(domain)
-  .range(range);
+	.domain(domain)
+	.range(range);
 
 
 var promises = []
@@ -53,7 +39,6 @@ myDataPromises = Promise.all(promises).then(function(topo) {
   	// Draw the map
   	svg.append("g")
     	.selectAll("path")
-    	
     	.data(topo.features)
     	.enter()
     	.append("path")
@@ -80,9 +65,7 @@ myDataPromises = Promise.all(promises).then(function(topo) {
     	.labels(labels)
     	.scale(colorScale)
     
-    
      svg.select(".legendQuant")
   		.call(legend);
-  
     })
     
